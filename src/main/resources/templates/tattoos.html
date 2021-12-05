@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Tattoo's</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+</head>
+<body>
+<h1 class="title-section">ArtHouse&amp;Tattoo </h1>
+
+<h1 class="text-primary">Tatuazhet</h1>
+
+<div>
+
+    <table class=" table table-bordered">
+        <tr>
+            <thead class="thead-dark">
+            <th>Tattoo</th>
+            <th>Titulli</th>
+            <th>Madhesia</th>
+
+            <th></th>
+            </thead>
+        </tr>
+
+        <tbody class="body">
+        <th:block th:each="tattoo : ${allTattoosList}">
+            <tr>
+                <td>
+                    <img th:src="@{${tattoo.picturePath}}" width="200px" height="200px" class="figure-img"/>
+                </td>
+                <td class="col-xl-2">[[${tattoo.name}]]</td>
+                <td class="col-xl-2">[[${tattoo.madhesia}]]</td>
+
+                <!--                <td>-->
+                <!--                    <a class="h4 mr-3" th:href="@{'/user/edit' + ${user.id}}">Edito</a>-->
+                <!--                    <a class="h4 " th:href="@{'/user/delete' + ${user.id}}">Fshij</a>-->
+                <!--                </td>-->
+
+        </th:block>
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+</html>

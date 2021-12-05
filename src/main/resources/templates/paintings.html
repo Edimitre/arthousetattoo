@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <meta charset="UTF-8">
+  <title>Paintings</title>
+</head>
+<body>
+    <h1 class="title-section">ArtHouse&amp;Tattoo </h1>
+
+    <h1 class="text-primary">PIKTURAT</h1>
+
+    <div>
+
+        <table class=" table table-bordered">
+            <tr>
+                <thead class="thead-dark">
+                <th>Piktura</th>
+                <th>Titulli</th>
+                <th>Gjatesia</th>
+                <th>Gjeresia</th>
+                <th></th>
+                </thead>
+            </tr>
+
+            <tbody class="body">
+                <th:block th:each="painting : ${allPaintingsList}">
+                    <tr>
+                        <td>
+                            <img th:src="@{${painting.picturePath}}" width="200px" height="200px" class="figure-img"/>
+                        </td>
+                        <td class="col-xl-2">[[${painting.name}]]</td>
+                        <td class="col-xl-2">[[${painting.weight}]]</td>
+                        <td class="col-xl-2">[[${painting.height}]]</td>
+                        <!--                <td>-->
+                        <!--                    <a class="h4 mr-3" th:href="@{'/user/edit' + ${user.id}}">Edito</a>-->
+                        <!--                    <a class="h4 " th:href="@{'/user/delete' + ${user.id}}">Fshij</a>-->
+                        <!--                </td>-->
+
+                </th:block>
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+</html>
